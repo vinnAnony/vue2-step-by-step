@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Step By Step</title>
+    <style type="text/css">
+        .color-orange {
+            color: darkorange;
+        }
+        .is-popping {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+    <button :class="{ 'is-popping' : isDisabled }">Conditional Class</button>
+
+    <p :class="className">Styled dynamically</p>
+
+    <button :disabled="isDisabled" @click="disableMe">Disable Me</button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script type="text/javascript">
+
+    let app = new Vue({
+        el: '#root',
+        data: {
+            title: 'Dynamic Title',
+            className: 'color-orange',
+            isDisabled: false
+        },
+        methods: {
+            disableMe: function() {
+                this.isDisabled = true
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

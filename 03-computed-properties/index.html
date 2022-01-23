@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Step By Step</title>
+    <style type="text/css">
+        .color-red {
+            color: darkred;
+        }
+        .color-blue {
+            color: darkblue;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+    <h2>All Students</h2>
+    <ul>
+        <li v-for="student in students" v-text="student.name"></li>
+    </ul>
+
+    <h2>Passed Students</h2>
+    <ul>
+        <li v-for="student in students" v-if="student.passed" v-text="student.name"></li>
+    </ul>
+
+    <h2>Failed Students</h2>
+    <ul>
+        <li v-for="student in failedStudents" v-text="student.name"></li>
+    </ul>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script type="text/javascript">
+
+    let app = new Vue({
+        el: '#root',
+        data: {
+            passClass: 'color-blue',
+            failClass: 'color-red',
+            students: [
+                {name: 'Kim', passed: true},
+                {name: 'Jong', passed: false},
+                {name: 'Barry', passed: false},
+                {name: 'Alan', passed: true},
+                {name: 'Frost', passed: false},
+            ]
+        },
+        computed:{
+            failedStudents() {
+                return this.students.filter(function(student) {
+                    return !student.passed;
+                })
+            },
+        },
+    })
+</script>
+</body>
+</html>
