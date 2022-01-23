@@ -1,0 +1,22 @@
+{
+  "name": "vue-2-step-by-step",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinnAnony/Vue-2-Step-By-Step.git"
+  },
+  "author": "Vinn Njeru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinnAnony/Vue-2-Step-By-Step/issues"
+  },
+  "homepage": "https://github.com/vinnAnony/Vue-2-Step-By-Step#readme",
+  "devDependencies": {
+    "vue": "^2.6.14"
+  }
+}
